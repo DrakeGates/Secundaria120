@@ -46,22 +46,10 @@
         <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
         
         <script>
-            function opc1(){
-                document.getElementById('opc').value=1;
-                document.formu.submit();
-            }
-            function opc2(){
-                document.getElementById('opc').value=2;
-                document.formu.submit();
-            }
             function opc3(){
                 document.getElementById('opc').value=3;
                 document.formu.submit();
             }
-            function opc4(){
-                document.getElementById('opc').value=4;
-                document.formu.submit();
-            } 
             function opc5(){
                 document.getElementById('opc').value=5;
                 document.formu.submit();
