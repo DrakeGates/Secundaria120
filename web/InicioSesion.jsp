@@ -118,7 +118,7 @@
             <div class="center">    <br><br><br><br> 
                 <h2>Inicia Sesion</h2><br>
                 <p class="lead">Para poder acceder a tu menu de opciones por favor ingresa sesion <i class="fa fa-smile-o"></i></p>
-            </div> 
+            </div>
             <div class="row contact-wrap"> 
                 <div class="status alert alert-success" style="display: none"></div>
                 <form class="contact-form" name="formu" id ="formu" action="InicioSesion" method="POST">
@@ -131,10 +131,10 @@
                         <div class="form-group">
                             <input type="password" id="password" name="pass" placeholder="Contraseña" size="30" class="form-control">
                         </div>
-                    </div><br>
+                    </div><br><br><br><br>
                     <div class="form-group center">
                         <button type="button" class="btn btn-primary btn-lg" onclick="validacionIS()">Iniciar Sesion</button>
-                        <br><br><hr><br><br><h3>¿No tienes cuenta?</h3><br><strong><a href="Registrar.jsp">Regístrate</a></strong>    
+                        <br><br><br><hr><br><br><br><h3>¿No tienes cuenta?</h3><br><strong><a href="Registrar.jsp">Regístrate</a></strong>    
                     </div>
                 </form> 
             </div><!--/.row-->
