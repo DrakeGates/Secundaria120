@@ -130,6 +130,15 @@
             }
             %>
             </h2><hr><br><br><br>
+	    <h2>
+                <form name="fecha" action="Director" method="POST">
+                    <input type="hidden" name="idDirector" value="<%= id%>">
+                     <input type="hidden" name="nombre" value="<%= nombre%>">
+                     <input type="hidden" name="sexo" value="<%= sexo%>">
+                     <input type="hidden" name="opc" value="8">
+                     <input type="date" name="fecha" id="fecha" value="<%= fecha%>" onblur="submit()">
+                </form>
+            </h2>
         </div>
         <div class="row">
              <ul class="navbar-static-top text-center">
