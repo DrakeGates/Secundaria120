@@ -1,6 +1,7 @@
 // 
 // Decompiled by Procyon v0.5.30
 // 
+//La función de este servlet es desplegar la foto de algun usuario.
 
 package Servlets;
 
