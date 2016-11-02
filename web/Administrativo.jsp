@@ -2,7 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Usuario h = new Usuario();
-    String tipo=null;
+    String tipo;
     String nombre=null;
     String sexo=null;
     String id=null;
