@@ -3,7 +3,7 @@
 <%
     Usuario h = new Usuario();
     String tipo;
-    String nombre=null;
+    String nombre;
     String sexo=null;
     String id=null;
     try {
