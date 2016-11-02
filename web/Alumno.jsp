@@ -24,16 +24,14 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
-    Connection con = DB.getConnection();
-    Statement sentencia=con.createStatement();
-    Statement sentencia2=con.createStatement();
-    Statement sentencia3=con.createStatement();
+    DB DB = new DB();
+    DB.conectar();
     String query = "call VerMonedasId("+id+");";
     String query2 = "call VerTutor("+id+");";
     String query3 = "call VerDatos("+id+")";
-    ResultSet resultados = sentencia.executeQuery(query); 
-    ResultSet resultados2 = sentencia2.executeQuery(query2); 
-    ResultSet resultados3 = sentencia3.executeQuery(query3);    
+    ResultSet resultados = DB.consulta(query);
+    ResultSet resultados2 = DB.consulta(query2);
+    ResultSet resultados3 = DB.consulta(query3);
     if(resultados.next()){
         monedas=resultados.getInt(1);
     }
@@ -47,7 +45,7 @@
     if(resultados3.next()){
         curp=resultados3.getString("curp");
     }
-    con.close();
+    DB.cierraConexion();
     
     nombreT=h.capitalizar(nombreT);
     ApaternoT=h.capitalizar(ApaternoT);

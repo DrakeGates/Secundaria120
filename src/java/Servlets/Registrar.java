@@ -1,7 +1,3 @@
-// 
-// Decompiled by Procyon v0.5.30
-// 
-
 package Servlets;
 
 import java.io.IOException;
@@ -28,6 +24,7 @@ public class Registrar extends HttpServlet
         return palabra.substring(0, 1).toUpperCase() + palabra.substring(1).toLowerCase();
     }
     
+    @Override
     protected void doPost(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
         final UsuarioDAO p = new UsuarioDAO();
         response.setContentType("text/html;charset=UTF-8");

@@ -11,7 +11,7 @@ import java.sql.Connection;
 public class UsuarioDAO
 {
     public Usuario BuscarPorUsuario(final String usuario) throws SQLException {
-        final String query = "call BuscarUsuario(?)";
+        String query = "call BuscarUsuario(?)";
         try (final Connection con = DB.getConnection()) {
             final PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, usuario);

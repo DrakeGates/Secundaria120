@@ -1,28 +1,24 @@
-<%@page import="Clases.DB"%>
-<%@page import="java.sql.SQLException"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.Statement"%>
+<%@page import="Clases.Funciones"%>
 <%@page import="Clases.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Usuario h = new Usuario();
+    Funciones Funcion = new Funciones();
     String tipo=null;
     String nombre=null;
     String sexo=null;
     String id="";
-    String fecha="";
+    String fecha = null;
     try {
         h = ((Usuario) session.getAttribute("user"));
         nombre = h.getNombre();
         sexo = h.getSexo();
         tipo = h.getTipo();
-        id= h.getId();
+        id = h.getId();
+        fecha = Funcion.VerFecha(id);
     } catch (Exception e) {
         e.printStackTrace();
     }
-    Clases.Funciones Funcion = new Clases.Funciones();
-    fecha=Funcion.VerFecha(id);
 %>
 <!DOCTYPE html>
 <html lang="en">

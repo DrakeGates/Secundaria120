@@ -462,7 +462,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016 <a target="_blank" title="Desarrollo web">By Gerardo Arceo</a>. <i class="fa fa-code"></i> SIPREDE 1.1
+                    &copy; 2016 <a target="_blank" title="Desarrollo web">By Gerardo Arceo</a>. <i class="fa fa-code"></i> SIPREDE 1.11
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

@@ -1,136 +1,107 @@
 package Clases;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.ResultSet;
 
 public class Funciones
 {
-    private final DB DB;
-    private ResultSet resultados;
+    String query;
+    DB DB = new DB();
+    ResultSet resultados;
     
-    public Funciones() {
-        this.DB = new DB();
-    }
-    
-    public String VerFecha(String idPersona) {
-        final String query = "call VerFecha("+idPersona+");";
+    public String VerFecha(String idPersona){
+        query = "call VerFecha("+idPersona+");";
         String fecha = "";
-        try {
-            final DB db = this.DB;
-            try (final Connection con = Clases.DB.getConnection()) {
-                final Statement sentencia = con.createStatement();
-                this.resultados = sentencia.executeQuery(query);
-                if (this.resultados.next()) {
-                    fecha = this.resultados.getString("Fecha");
-                }
-                con.close();
+        try{
+            DB.conectar();
+            resultados = DB.consulta(query);
+            if (resultados.next()) {
+                fecha = resultados.getString("Fecha");
             }
-        }
-        catch (Exception e) {
+            DB.cierraConexion();
+        }catch(SQLException e){
             System.out.println(e);
         }
         return fecha;
     }
     
     public void ActualizarFecha(String idPersona,String fechaNueva) throws SQLException{
-        final String query = "call ActualizarFecha("+idPersona+",'"+fechaNueva+"');";
-        try (final Connection con = Clases.DB.getConnection()) {
-            final Statement sentencia = con.createStatement();
-            sentencia.executeQuery(query);
-            con.close();
+        query = "call ActualizarFecha("+idPersona+",'"+fechaNueva+"');";
+        try{
+            DB.consulta(query);
+            DB.cierraConexion();
+        }catch(SQLException e){
+            System.out.println(e);
+            int i = 9;
         }
+        
     }
     
-    public ArrayList<String> VerDatos(final String idPersona) {
-        final String query = "call VerDatos(" + idPersona + ");";
-        final ArrayList<String> Datos = new ArrayList<String>();
-        try {
-            final DB db = this.DB;
-            try (final Connection con = Clases.DB.getConnection()) {
-                final Statement sentencia = con.createStatement();
-                this.resultados = sentencia.executeQuery(query);
-                if (this.resultados.next()) {
-                    Datos.add(this.resultados.getString("Nombre"));
-                    Datos.add(this.resultados.getString("Apaterno"));
-                    Datos.add(this.resultados.getString("Amaterno"));
-                    Datos.add(this.resultados.getString("Nacimiento"));
-                    Datos.add(this.resultados.getString("Curp"));
-                    Datos.add(this.resultados.getString("Email"));
-                    Datos.add(this.resultados.getString("Celular"));
-                    Datos.add(this.resultados.getString("Telefono"));
-                }
-                con.close();
-            }
+    public ArrayList<String> VerDatos(final String idPersona) throws SQLException {
+        query = "call VerDatos(" + idPersona + ");";
+        ArrayList<String> Datos = new ArrayList<>();
+        DB.conectar();
+        resultados = DB.consulta(query);
+        if (resultados.next()) {
+            Datos.add(resultados.getString("Nombre"));
+            Datos.add(resultados.getString("Apaterno"));
+            Datos.add(resultados.getString("Amaterno"));
+            Datos.add(resultados.getString("Nacimiento"));
+            Datos.add(resultados.getString("Curp"));
+            Datos.add(resultados.getString("Email"));
+            Datos.add(resultados.getString("Celular"));
+            Datos.add(resultados.getString("Telefono"));
         }
-        catch (SQLException ex) {
-            System.out.println(ex);
-        }
+        DB.cierraConexion();
         return Datos;
     }
     
-    public ArrayList<String> VerPersonas(final String Tipo) {
-        final String query = "call VerTodos" + Tipo + "();";
-        final ArrayList<String> Personas = new ArrayList<String>();
-        try {
-            final DB db = this.DB;
-            try (final Connection con = Clases.DB.getConnection()) {
-                final Statement sentencia = con.createStatement();
-                this.resultados = sentencia.executeQuery(query);
-                while (this.resultados.next()) {
-                    Personas.add(this.resultados.getString("Nombre"));
-                    Personas.add(this.resultados.getString("Apaterno"));
-                    Personas.add(this.resultados.getString("Amaterno"));
-                    Personas.add(this.resultados.getString("idPersona"));
-                }
-                con.close();
-            }
+    public ArrayList<String> VerPersonas(final String Tipo) throws SQLException {
+        query = "call VerTodos" + Tipo + "();";
+        final ArrayList<String> Personas = new ArrayList<>();
+        DB.conectar();
+        resultados = DB.consulta(query);
+        while (resultados.next()) {
+            Personas.add(resultados.getString("Nombre"));
+            Personas.add(resultados.getString("Apaterno"));
+            Personas.add(resultados.getString("Amaterno"));
+            Personas.add(resultados.getString("idPersona"));
         }
-        catch (SQLException ex) {
-            System.out.println(ex);
-        }
+        DB.cierraConexion();
         return Personas;
     }
     
-    public ArrayList<String> VerGrupo(final String ano, final String grupo) {
-        final String query = "call VerAlumnosGrupo(" + ano + ",'" + grupo + "');";
-        final ArrayList<String> Alumnos = new ArrayList<String>();
-        try {
-            final DB db = this.DB;
-            try (final Connection con = Clases.DB.getConnection()) {
-                final Statement sentencia = con.createStatement();
-                this.resultados = sentencia.executeQuery(query);
-                while (this.resultados.next()) {
-                    Alumnos.add(this.resultados.getString("Nombre"));
-                    Alumnos.add(this.resultados.getString("Apaterno"));
-                    Alumnos.add(this.resultados.getString("Amaterno"));
-                    Alumnos.add(this.resultados.getString("idPersona"));
-                }
-                con.close();
+    public ArrayList<String> VerGrupo(final String ano, final String grupo) throws SQLException {
+        query = "call VerAlumnosGrupo(" + ano + ",'" + grupo + "');";
+        ArrayList<String> Alumnos = new ArrayList<>();
+        try{
+            DB.conectar();
+            resultados = DB.consulta(query);
+            while (this.resultados.next()) {
+                Alumnos.add(this.resultados.getString("Nombre"));
+                Alumnos.add(this.resultados.getString("Apaterno"));
+                Alumnos.add(this.resultados.getString("Amaterno"));
+                Alumnos.add(this.resultados.getString("idPersona"));
             }
-        }
-        catch (SQLException ex) {
-            System.out.println(ex);
+            DB.cierraConexion();
+        }catch(Exception e){
+            
         }
         return Alumnos;
     }
     
     public ArrayList<String> VerSituaciones(final String idPersona) throws SQLException {
-        final String query = "call VerSituaciones(" + idPersona + ");";
-        final ArrayList<String> Situaciones = new ArrayList<String>();
-        final DB db = this.DB;
-        try (final Connection con = Clases.DB.getConnection()) {
-            final Statement sentencia = con.createStatement();
-            this.resultados = sentencia.executeQuery(query);
-            while (this.resultados.next()) {
-                Situaciones.add(this.resultados.getString("Situacion"));
-                Situaciones.add(this.resultados.getString("Fecha"));
-                Situaciones.add(this.resultados.getString("idSituacion"));
-            }
-            con.close();
+        query = "call VerSituaciones(" + idPersona + ");";
+        ArrayList<String> Situaciones = new ArrayList<>();
+        DB.conectar();
+        resultados = DB.consulta(query);
+        while (resultados.next()) {
+            Situaciones.add(resultados.getString("Situacion"));
+            Situaciones.add(resultados.getString("Fecha"));
+            Situaciones.add(resultados.getString("idSituacion"));
         }
+        DB.cierraConexion();
         return Situaciones;
     }
 }

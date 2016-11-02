@@ -15,6 +15,8 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
+    Clases.Funciones Funcion = new Clases.Funciones();
+    String fecha=Funcion.VerFecha(id);
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,12 +133,12 @@
             %>
             </h2><hr>
             <h2>
-                <form name="fecha" action="Director" method="POST">
-                    <input type="hidden" name="idDirector" value="<%= id%>">
-                     <input type="hidden" name="nombre" value="<%= nombre%>">
-                     <input type="hidden" name="sexo" value="<%= sexo%>">
-                     <input type="hidden" name="opc" value="8">
-                     <input type="date" name="fecha" id="fecha" value="<%= fecha%>" onblur="submit()">
+                <form name="fecha" action="Docente" method="POST">
+                    <input type="hidden" name="idDocente" value="<%= id%>">
+                    <input type="hidden" name="nombre" value="<%= nombre%>">
+                    <input type="hidden" name="sexo" value="<%= sexo%>">
+                    <input type="hidden" name="opc" value="6">
+                    <input type="date" name="fecha" id="fecha" value="<%= fecha%>" onblur="submit()">
                 </form>
             </h2>
                 <br><br><br>

@@ -33,7 +33,65 @@ public class Doctor extends HttpServlet
             final String diaActual = fecha.substring(8, 10);
             final String mesActual = fecha.substring(5, 7);
             final String anoActual = fecha.substring(0, 4);
-            out.println("<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <meta name=\"description\" content=\"\">\n        <meta name=\"author\" content=\"\">\n        <title>M\u00e9dico</title>\n\n        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n        <link href=\"css/font-awesome.min.css\" rel=\"stylesheet\">\n        <link href=\"css/animate.min.css\" rel=\"stylesheet\">\n        <link href=\"css/prettyPhoto.css\" rel=\"stylesheet\">\n        <link href=\"css/main.css\" rel=\"stylesheet\">\n        <link href=\"css/responsive.css\" rel=\"stylesheet\">\n        <link rel=\"shortcut icon\" href=\"images/ico/favicon.ico\">\n        <link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"images/ico/apple-touch-icon-144-precomposed.png\">\n        <link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"images/ico/apple-touch-icon-114-precomposed.png\">\n        <link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"images/ico/apple-touch-icon-72-precomposed.png\">\n        <link rel=\"apple-touch-icon-precomposed\" href=\"images/ico/apple-touch-icon-57-precomposed.png\">\n       <script src=\"js/validacion.js\" language=\"javascript\" type=\"text/javascript\"></script>\n    </head><!--/head-->\n\n    <body class=\"homepage\">\n        <header>\n            <nav class=\"navbar navbar-inverse\" role=\"banner\">\n                <div class=\"container\">\n                    <div class=\"navbar-header\">\n                        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n                            <span class=\"sr-only\">Navegacion</span>\n                            <span class=\"icon-bar\"></span>\n                            <span class=\"icon-bar\"></span>\n                            <span class=\"icon-bar\"></span>\n                        </button>\n                        <a class=\"navbar-brand\" href=\"index.jsp\"><img src=\"images/logo.png\" alt=\"logo\"></a>\n                    </div>\n\n                    <div class=\"collapse navbar-collapse navbar-right\">\n                    <ul class=\"nav navbar-nav\">\n                        <li class=\"active\"><a href=\"index.jsp\">Inicio</a></li>\n                        <li><a href=\"Secundaria120.jsp\">Secundaria 120</a></li>\n                        <li><a href=\"CuadroHonor.jsp\">Cuadro de Honor</a></li>\n                        <li><a href=\"Informacion.jsp\">Informaci\u00f3n</a></li>\n                            <li><a href=\"Doctor.jsp\">Menu</a></li>\n                                <li class=\"dropdown active\">\n                                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Hola " + nombre + "<i class=\"fa fa-angle-down\"></i></a>\n" + "                                <ul class=\"dropdown-menu\">\n" + "<form method=\"post\" action=\"Doctor\" name=\"verdatos\">\n" + "                                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"1\"></form>\n" + "                               <li><a href=\"#\" onClick=\"verDatos()\">Ver mis datos</a></li>" + "                               <li><a href=\"CerrarSesion\">Cerrar Sesi\u00f3n</a></li>" + "                                </ul>\n" + "                            </li>   \n" + "                        </ul>\n" + "                    </div>\n" + "                </div><!--/.container-->\n" + "            </nav><!--/nav-->\n" + "        </header><!--/header-->");
+            out.println("<!DOCTYPE html>" + 
+ "<html lang=\"en\">" + 
+ "    <head>" + 
+ "        <meta charset=\"utf-8\">" + 
+ "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" + 
+ "        <meta name=\"description\" content=\"\">" + 
+ "        <meta name=\"author\" content=\"\">" + 
+ "        <title>M\u00e9dico</title>" + 
+ "" + 
+ "        <link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">" + 
+ "        <link href=\"css/font-awesome.min.css\" rel=\"stylesheet\">" + 
+ "        <link href=\"css/animate.min.css\" rel=\"stylesheet\">" + 
+ "        <link href=\"css/prettyPhoto.css\" rel=\"stylesheet\">" + 
+ "        <link href=\"css/main.css\" rel=\"stylesheet\">" + 
+ "        <link href=\"css/responsive.css\" rel=\"stylesheet\">" + 
+ "        <link rel=\"shortcut icon\" href=\"images/ico/favicon.ico\">" + 
+ "        <link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"images/ico/apple-touch-icon-144-precomposed.png\">" + 
+ "        <link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"images/ico/apple-touch-icon-114-precomposed.png\">" + 
+ "        <link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"images/ico/apple-touch-icon-72-precomposed.png\">" + 
+ "        <link rel=\"apple-touch-icon-precomposed\" href=\"images/ico/apple-touch-icon-57-precomposed.png\">" + 
+ "       <script src=\"js/validacion.js\" language=\"javascript\" type=\"text/javascript\"></script>" + 
+ "    </head><!--/head-->" + 
+ "" + 
+ "    <body class=\"homepage\">" + 
+ "        <header>" + 
+ "            <nav class=\"navbar navbar-inverse\" role=\"banner\">" + 
+ "                <div class=\"container\">" + 
+ "                    <div class=\"navbar-header\">" + 
+ "                        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">" + 
+ "                            <span class=\"sr-only\">Navegacion</span>" + 
+ "                            <span class=\"icon-bar\"></span>" + 
+ "                            <span class=\"icon-bar\"></span>" + 
+ "                            <span class=\"icon-bar\"></span>" + 
+ "                        </button>" + 
+ "                        <a class=\"navbar-brand\" href=\"index.jsp\"><img src=\"images/logo.png\" alt=\"logo\"></a>" + 
+ "                    </div>" + 
+ "" + 
+ "                    <div class=\"collapse navbar-collapse navbar-right\">" + 
+ "                    <ul class=\"nav navbar-nav\">" + 
+ "                        <li class=\"active\"><a href=\"index.jsp\">Inicio</a></li>" + 
+ "                        <li><a href=\"Secundaria120.jsp\">Secundaria 120</a></li>" + 
+ "                        <li><a href=\"CuadroHonor.jsp\">Cuadro de Honor</a></li>" + 
+ "                        <li><a href=\"Informacion.jsp\">Informaci\u00f3n</a></li>" + 
+ "                            <li><a href=\"Doctor.jsp\">Menu</a></li>" + 
+ "                                <li class=\"dropdown active\">" + 
+ "                                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Hola " + nombre + "<i class=\"fa fa-angle-down\"></i></a>" + 
+ "                                       <ul class=\"dropdown-menu\">" + 
+ "       <form method=\"post\" action=\"Doctor\" name=\"verdatos\">" + 
+ "                                           <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"1\"></form>" + 
+ "                                      <li><a href=\"#\" onClick=\"verDatos()\">Ver mis datos</a></li>" + "                               <li><a href=\"CerrarSesion\">Cerrar Sesi\u00f3n</a></li>" + "                                </ul>" + 
+ "                                   </li>   " + 
+ "                               </ul>" + 
+ "                           </div>" + 
+ "                       </div><!--/.container-->" + 
+ "                   </nav><!--/nav-->" + 
+ "               </header><!--/header-->");
             out.println("<div class=\"center\"><h2><br>");
             out.println("<p>Men\u00fa de " + nombre + "</p>");
             out.println("</h2><hr>");
@@ -47,20 +105,36 @@ public class Doctor extends HttpServlet
                     response.sendRedirect("Error.jsp");
                 }
                 out.println("<br><br><br>");
-                out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"5\">\n");
+                out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"5\">" + 
+ "");
                 out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Cambiar Contrase\u00f1a</button></form>                        <br><br>");
                 out.println("<br><br><br>");
-                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        </div><br><br>");
+                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        </div><br><br>");
             }
             else if (opc.equals("2")) {
                 final String buscado = request.getParameter("buscado");
                 out.println("<br><label>Buscar por nombre</label><br>");
                 if (buscado == null) {
-                    out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"text\" name=\"buscado\" onblur=\"submit()\" placeholder=\"Nombre de persona :D\">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2\"><br><br>");
+                    out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"text\" name=\"buscado\" onblur=\"submit()\" placeholder=\"Nombre de persona :D\">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2\"><br><br>");
                     out.println("</form><br>");
                 }
                 else {
-                    out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"text\" name=\"buscado\" onblur=\"submit()\" value=" + buscado + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2\"><br><br>");
+                    out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"text\" name=\"buscado\" onblur=\"submit()\" value=" + buscado + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2\"><br><br>");
                     out.println("</form><h3>Para ver los datos de una persona solo toca su nombre :)</h3>");
                     final String query = "call BuscarPersona('^" + buscado + "');";
                     try (final Connection con = DB.getConnection()) {
@@ -72,7 +146,16 @@ public class Doctor extends HttpServlet
                                 ++i;
                                 final String js = "Redirigir5(" + i + ");";
                                 final String formu = "red" + i;
-                                out.println("<form action=\"Doctor\" method=\"POST\" name=" + formu + " id=" + formu + ">\n" + "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + " onclick=\"submit();\">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.2\">\n" + "                    <input type=\"hidden\" name=\"idAlumno\" value=" + resultados.getString("idPersona") + ">\n" + "                    <input type=\"hidden\" name=\"apellidoP\" value=" + resultados.getString("Apaterno") + ">\n" + "                    <input type=\"hidden\" name=\"apellidoM\" value=" + resultados.getString("Amaterno") + ">\n" + "                    <input type=\"hidden\" name=\"nombreA\" value=" + resultados.getString("Nombre") + ">\n" + "<br>");
+                                out.println("<form action=\"Doctor\" method=\"POST\" name=" + formu + " id=" + formu + ">" + 
+ "                           <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + " onclick=\"submit();\">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.2\">" + 
+ "                           <input type=\"hidden\" name=\"idAlumno\" value=" + resultados.getString("idPersona") + ">" + 
+ "                           <input type=\"hidden\" name=\"apellidoP\" value=" + resultados.getString("Apaterno") + ">" + 
+ "                           <input type=\"hidden\" name=\"apellidoM\" value=" + resultados.getString("Amaterno") + ">" + 
+ "                           <input type=\"hidden\" name=\"nombreA\" value=" + resultados.getString("Nombre") + ">" + 
+ "       <br>");
                                 out.println("<p onclick=" + js + "><a target=\"_blank\" title=\"Ver datos Alumno\">" + resultados.getString("Nombre") + " " + resultados.getString("Apaterno") + " " + resultados.getString("Amaterno") + " <strong>" + resultados.getString("Persona") + "</strong>");
                                 out.println("</a></p></form>");
                             }
@@ -84,11 +167,21 @@ public class Doctor extends HttpServlet
                     }
                 }
                 out.println("<br><br><br><br><br><br><h2>¿De que grupo es el alumno?</h2>");
-                out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.1\">\n" + "<label>Grado</label>\n" + "                    <select name=\"ano\">\n" + "<option value=\"1\">1º</option>" + "<option value=\"2\">2º</option>" + "<option value=\"3\">3º</option>" + "</select>");
-                out.println("&nbsp;&nbsp;&nbsp;&nbsp;<label>Grupo</label>\n                    <select name=\"grupo\">\n<option value=\"A\">A</option><option value=\"B\">B</option><option value=\"C\">C</option><option value=\"D\">D</option><option value=\"E\">E</option></select><br><br>");
+                out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.1\">" + 
+ "       <label>Grado</label>" + 
+ "                           <select name=\"ano\">" + 
+ "       <option value=\"1\">1º</option>" + "<option value=\"2\">2º</option>" + "<option value=\"3\">3º</option>" + "</select>");
+                out.println("&nbsp;&nbsp;&nbsp;&nbsp;<label>Grupo</label>" + 
+ "                    <select name=\"grupo\">" + 
+ "<option value=\"A\">A</option><option value=\"B\">B</option><option value=\"C\">C</option><option value=\"D\">D</option><option value=\"E\">E</option></select><br><br>");
                 out.println("</select><button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onclick=\"submit()\">Aceptar</button></form><br>");
                 out.println("<br><br><br><br>");
-                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        <br><br><br><br><br><br><br></div>");
+                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        <br><br><br><br><br><br><br></div>");
             }
             else if (opc.equals("2.1")) {
                 try (final Connection con2 = DB.getConnection()) {
@@ -101,16 +194,34 @@ public class Doctor extends HttpServlet
                     final String query2 = "call VerAlumnosGrupo(" + ano + ",'" + grupo + "');";
                     final ResultSet resultados2 = sentencia2.executeQuery(query2);
                     out.println("<br><br><br><h2>Alumnos del grupo " + ano + "º " + grupo + "</h2><br>");
-                    out.println("<table border=1 style=text-align:center;><tr>\n<th>#</th>\n<th>Alumno</td>\n<th>Reportar</th>\n</tr>\n");
+                    out.println("<table border=1 style=text-align:center;><tr>" + 
+ "<th>#</th>" + 
+ "<th>Alumno</td>" + 
+ "<th>Reportar</th>" + 
+ "</tr>" + 
+ "");
                     while (resultados2.next()) {
                         out.println("<tr><td>" + j + "</td><td>" + resultados2.getString("Apaterno") + " " + resultados2.getString("Amaterno") + " " + resultados2.getString("Nombre") + "</td>");
-                        out.println("<th><form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"hidden\" name=\"ano\" value=" + ano + ">\n" + "                    <input type=\"hidden\" name=\"grupo\" value=" + grupo + ">\n" + "                    <input type=\"hidden\" name=\"idAlumno\" value=" + resultados2.getString("Datos.idPersona") + ">\n" + "                    <input type=\"hidden\" name=\"nombreA\" value=" + resultados2.getString("Datos.Nombre") + ">\n" + "                    <input type=\"hidden\" name=\"apellidoP\" value=" + resultados2.getString("Datos.Apaterno") + ">\n" + "                    <input type=\"hidden\" name=\"apellidoM\" value=" + resultados2.getString("Datos.Amaterno") + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.2\">\n" + "                    <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Reportar</button></form></th> \n");
+                        out.println("<th><form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"hidden\" name=\"ano\" value=" + ano + ">" + 
+ "                           <input type=\"hidden\" name=\"grupo\" value=" + grupo + ">" + 
+ "                           <input type=\"hidden\" name=\"idAlumno\" value=" + resultados2.getString("Datos.idPersona") + ">" + 
+ "                           <input type=\"hidden\" name=\"nombreA\" value=" + resultados2.getString("Datos.Nombre") + ">" + 
+ "                           <input type=\"hidden\" name=\"apellidoP\" value=" + resultados2.getString("Datos.Apaterno") + ">" + 
+ "                           <input type=\"hidden\" name=\"apellidoM\" value=" + resultados2.getString("Datos.Amaterno") + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.2\">" + 
+ "                           <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Reportar</button></form></th> " + 
+ "");
                         out.println("</tr>");
                         ++j;
                     }
                     out.println("</table>");
                     out.println("<br><br><br><br>");
-                    out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        <br><br><br><br><br><br></div>");
+                    out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        <br><br><br><br><br><br></div>");
                     con2.close();
                 }
                 catch (SQLException ex2) {
@@ -129,9 +240,19 @@ public class Doctor extends HttpServlet
                 out.println("<h3>Alumno a reportar: " + nombreA + " " + apellidoP + " " + apellidoM + "</h3><br>");
                 out.println("<img src=\"F?idAlumno=" + idAlumno + "\" width=\"175\" height=\"210\"//>");
                 out.println("<br><br><br><br>");
-                out.println("<form action=\"Doctor\" method=\"POST\">\n<label>Informe Medico</label><br>\n<textarea name=\"incidencia\" placeholder=\"(Ej.Fuerte dolor de cabeza y nauseas, se tuvo que retirar a su casa, medicamento recomendado Paracetamol)\" required=\"required\" class=\"form-control\" rows=\"8\"></textarea>\n               <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "               <input type=\"hidden\" name=\"tipo\" value=\"Buena\">\n" + "               <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "               <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "               <input type=\"hidden\" name=\"idAlumno\" value=" + idAlumno + ">\n" + "               <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.3\">\n" + "               <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Meter Reporte</button>");
+                out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "<label>Informe Medico</label><br>" + 
+ "<textarea name=\"incidencia\" placeholder=\"(Ej.Fuerte dolor de cabeza y nauseas, se tuvo que retirar a su casa, medicamento recomendado Paracetamol)\" required=\"required\" class=\"form-control\" rows=\"8\"></textarea>" + 
+ "               <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                      <input type=\"hidden\" name=\"tipo\" value=\"Buena\">" + 
+ "                      <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                      <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                      <input type=\"hidden\" name=\"idAlumno\" value=" + idAlumno + ">" + 
+ "                      <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"2.3\">" + 
+ "                      <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Meter Reporte</button>");
                 out.println("<br><br><br><br><br><br>");
-                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        <br><br><br><br><br><br></div>");
+                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        <br><br><br><br><br><br></div>");
             }
             else if (opc.equals("2.3")) {
                 final String idAlumno = request.getParameter("idAlumno");
@@ -148,17 +269,28 @@ public class Doctor extends HttpServlet
                     response.sendRedirect("Error.jsp");
                 }
                 out.println("<br><br><br><br><br><br><br><br><br>");
-                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        </div>");
+                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        </div>");
             }
             else if (opc.equals("3")) {
                 final String buscado = request.getParameter("buscado");
                 out.println("<br><label>Buscar por nombre</label><br>");
                 if (buscado == null) {
-                    out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"text\" name=\"buscado\" onblur=\"submit()\" placeholder=\"Nombre de persona :D\">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3\"><br><br>");
+                    out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"text\" name=\"buscado\" onblur=\"submit()\" placeholder=\"Nombre de persona :D\">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3\"><br><br>");
                     out.println("</form><br>");
                 }
                 else {
-                    out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"text\" name=\"buscado\" onblur=\"submit()\" value=" + buscado + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3\"><br><br>");
+                    out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"text\" name=\"buscado\" onblur=\"submit()\" value=" + buscado + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3\"><br><br>");
                     out.println("</form><h3>Para ver los datos de una persona solo toca su nombre :)</h3>");
                     final String query = "call BuscarPersona('^" + buscado + "');";
                     try (final Connection con = DB.getConnection()) {
@@ -170,7 +302,13 @@ public class Doctor extends HttpServlet
                                 ++i;
                                 final String js = "Redirigir5(" + i + ");";
                                 final String formu = "red" + i;
-                                out.println("<form action=\"Doctor\" method=\"POST\" name=" + formu + " id=" + formu + ">\n" + "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + " onclick=\"submit();\">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.2\">\n" + "                    <input type=\"hidden\" name=\"idAlumno\" value=" + resultados.getString("idPersona") + ">\n" + "<br>");
+                                out.println("<form action=\"Doctor\" method=\"POST\" name=" + formu + " id=" + formu + ">" + 
+ "                           <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + " onclick=\"submit();\">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.2\">" + 
+ "                           <input type=\"hidden\" name=\"idAlumno\" value=" + resultados.getString("idPersona") + ">" + 
+ "       <br>");
                                 out.println("<p onclick=" + js + "><a target=\"_blank\" title=\"Ver datos Alumno\">" + resultados.getString("Nombre") + " " + resultados.getString("Apaterno") + " " + resultados.getString("Amaterno") + " <strong>" + resultados.getString("Persona") + "</strong>");
                                 out.println("</a></p></form>");
                             }
@@ -182,11 +320,21 @@ public class Doctor extends HttpServlet
                     }
                 }
                 out.println("<br><br><br><br><br><br><h2>¿De que grupo es el alumno?</h2>");
-                out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.1\">\n" + "<label>Grado</label>\n" + "                    <select name=\"ano\">\n" + "<option value=\"1\">1º</option>" + "<option value=\"2\">2º</option>" + "<option value=\"3\">3º</option>" + "</select>");
-                out.println("&nbsp;&nbsp;&nbsp;&nbsp;<label>Grupo</label>\n                    <select name=\"grupo\">\n<option value=\"A\">A</option><option value=\"B\">B</option><option value=\"C\">C</option><option value=\"D\">D</option><option value=\"E\">E</option></select><br><br>");
+                out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.1\">" + 
+ "       <label>Grado</label>" + 
+ "                           <select name=\"ano\">" + 
+ "       <option value=\"1\">1º</option>" + "<option value=\"2\">2º</option>" + "<option value=\"3\">3º</option>" + "</select>");
+                out.println("&nbsp;&nbsp;&nbsp;&nbsp;<label>Grupo</label>" + 
+ "                    <select name=\"grupo\">" + 
+ "<option value=\"A\">A</option><option value=\"B\">B</option><option value=\"C\">C</option><option value=\"D\">D</option><option value=\"E\">E</option></select><br><br>");
                 out.println("</select><button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onclick=\"submit()\">Aceptar</button></form><br>");
                 out.println("<br><br><br><br>");
-                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        <br><br><br><br><br><br><br></div>");
+                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        <br><br><br><br><br><br><br></div>");
             }
             else if (opc.equals("3.1")) {
                 try (final Connection con2 = DB.getConnection()) {
@@ -199,16 +347,34 @@ public class Doctor extends HttpServlet
                     final String query2 = "call VerAlumnosGrupo(" + ano + ",'" + grupo + "');";
                     final ResultSet resultados2 = sentencia2.executeQuery(query2);
                     out.println("<br><br><br><h2>Alumnos del grupo " + ano + "º " + grupo + "</h2><br>");
-                    out.println("<table border=1 style=text-align:center;><tr>\n<th>#</th>\n<th>Alumno</td>\n<th>Consultar</th>\n</tr>\n");
+                    out.println("<table border=1 style=text-align:center;><tr>" + 
+ "<th>#</th>" + 
+ "<th>Alumno</td>" + 
+ "<th>Consultar</th>" + 
+ "</tr>" + 
+ "");
                     while (resultados2.next()) {
                         out.println("<tr><td>" + j + "</td><td>" + resultados2.getString("Apaterno") + " " + resultados2.getString("Amaterno") + " " + resultados2.getString("Nombre") + "</td>");
-                        out.println("<th><form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"hidden\" name=\"ano\" value=" + ano + ">\n" + "                    <input type=\"hidden\" name=\"grupo\" value=" + grupo + ">\n" + "                    <input type=\"hidden\" name=\"idAlumno\" value=" + resultados2.getString("Datos.idPersona") + ">\n" + "                    <input type=\"hidden\" name=\"nombreA\" value=" + resultados2.getString("Datos.Nombre") + ">\n" + "                    <input type=\"hidden\" name=\"apellidoP\" value=" + resultados2.getString("Datos.Apaterno") + ">\n" + "                    <input type=\"hidden\" name=\"apellidoM\" value=" + resultados2.getString("Datos.Amaterno") + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.2\">\n" + "                    <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Consultar</button></form></th> \n");
+                        out.println("<th><form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"hidden\" name=\"ano\" value=" + ano + ">" + 
+ "                           <input type=\"hidden\" name=\"grupo\" value=" + grupo + ">" + 
+ "                           <input type=\"hidden\" name=\"idAlumno\" value=" + resultados2.getString("Datos.idPersona") + ">" + 
+ "                           <input type=\"hidden\" name=\"nombreA\" value=" + resultados2.getString("Datos.Nombre") + ">" + 
+ "                           <input type=\"hidden\" name=\"apellidoP\" value=" + resultados2.getString("Datos.Apaterno") + ">" + 
+ "                           <input type=\"hidden\" name=\"apellidoM\" value=" + resultados2.getString("Datos.Amaterno") + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.2\">" + 
+ "                           <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Consultar</button></form></th> " + 
+ "");
                         out.println("</tr>");
                         ++j;
                     }
                     out.println("</table>");
                     out.println("<br><br><br><br>");
-                    out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        <br><br><br><br><br><br></div>");
+                    out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        <br><br><br><br><br><br></div>");
                     con2.close();
                 }
                 catch (SQLException ex2) {
@@ -235,7 +401,13 @@ public class Doctor extends HttpServlet
                     out.println("<img src=\"F?idAlumno=" + idAlumno + "\" width=\"215\" height=\"258\"//>");
                     out.println("</div><br><br><br><br><br><br><br><br><br><br><br>");
                     out.println("<br><br><br><br><br><br><br><div class=\"form-group center\">");
-                    out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idApoyo\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"idAlumno\" value=" + idAlumno + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.21\">\n" + "                    <textarea name=\"comentarioAlu\" class=\"form-control\" rows=\"8\">" + comentarioAlu + "</textarea>\n" + "                    <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Modificar Comentario</button></form>");
+                    out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idApoyo\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"idAlumno\" value=" + idAlumno + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.21\">" + 
+ "                           <textarea name=\"comentarioAlu\" class=\"form-control\" rows=\"8\">" + comentarioAlu + "</textarea>" + 
+ "                           <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"submit()\">Modificar Comentario</button></form>");
                     out.println("<br><br><br><br>");
                     if (resultados4.next()) {
                         out.println("<h2>Incidencias M\u00e9dicas</h2><br><h3>" + resultados4.getString("Incidencia") + "<br>Ocurrida el " + resultados4.getString("Fecha") + "<br>Reportada por " + resultados4.getString("Nombre del reportador") + " " + resultados4.getString("Apellido del reportador") + "<br><hr><br></h3>");
@@ -261,7 +433,13 @@ public class Doctor extends HttpServlet
                     final Statement sentencia = con.createStatement();
                     final String query4 = "call ModificarComentarioAlumno(" + idAlumno + ",'" + comentarioAlu + "');";
                     final ResultSet resultados3 = sentencia.executeQuery(query4);
-                    out.println("<form action=\"Doctor\" method=\"POST\" name=\"red\" id=\"red\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"idAlumno\" value=" + idAlumno + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.2\"></form>\n");
+                    out.println("<form action=\"Doctor\" method=\"POST\" name=\"red\" id=\"red\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"idAlumno\" value=" + idAlumno + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"3.2\"></form>" + 
+ "");
                     out.println("<script>Redirigir();</script>");
                     con.close();
                 }
@@ -272,8 +450,15 @@ public class Doctor extends HttpServlet
             else if (opc.equals("4")) {
                 idDoctor = request.getParameter("idDoctor");
                 out.println("<br><br><br><br><br><br><h2>Por favor escribe tu nueva contrase\u00f1a</h2><br>");
-                out.println("<form action=\"Doctor\" method=\"POST\">\n                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">\n" + "                    <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">\n" + "                    <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">\n" + "                    <input type=\"text\" name=\"Pass\" placeholder=\"Contrase\u00f1a\">\n" + "                    <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"4.1\"><br><br>\n" + "                    <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onclick=\"submit()\">Cambiar Contrase\u00f1a</button>" + "<br><br><br><br><br><br><br>");
-                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        <br><br><br><br><br><br><br></div>");
+                out.println("<form action=\"Doctor\" method=\"POST\">" + 
+ "                    <input type=\"hidden\" name=\"idDoctor\" value=" + idDoctor + ">" + 
+ "                           <input type=\"hidden\" name=\"nombre\" value=" + nombre + ">" + 
+ "                           <input type=\"hidden\" name=\"sexo\" value=" + sexo + ">" + 
+ "                           <input type=\"text\" name=\"Pass\" placeholder=\"Contrase\u00f1a\">" + 
+ "                           <input type=\"hidden\" name=\"opc\" id=\"opc\" value=\"4.1\"><br><br>" + 
+ "                           <button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onclick=\"submit()\">Cambiar Contrase\u00f1a</button>" + "<br><br><br><br><br><br><br>");
+                out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        <br><br><br><br><br><br><br></div>");
             }
             else if (opc.equals("4.1")) {
                 final String idPersona = request.getParameter("idDoctor");
@@ -284,14 +469,40 @@ public class Doctor extends HttpServlet
                     final ResultSet resultados3 = sentencia.executeQuery(query4);
                     out.println("<br><br><br><br><br><br><h2>Contrase\u00f1a modificada exitosamente :D</h2>");
                     out.println("<br><br><br><br>");
-                    out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> \n                        <br><br><br><br><br><br><br></div>");
+                    out.println("<button type=\"button\" class=\"btn btn-primary btn-lg\" required=\"required\" onClick=\"window.location.href='Doctor.jsp'\">Volver</button> " + 
+ "                        <br><br><br><br><br><br><br></div>");
                     con.close();
                 }
                 catch (SQLException ex) {
                     response.sendRedirect("Error.jsp");
                 }
             }
-            out.println("<footer id=\"footer\" class=\"midnight-blue\">\n        <div class=\"container\">\n            <div class=\"row\">\n                <div class=\"col-sm-6\">\n                    &copy; 2016 <a target=\"_blank\" title=\"Desarrollo web\">By Gerardo Arceo</a>. <i class=\"fa fa-code\"></i>\n                </div>\n                <div class=\"col-sm-6\">\n                    <ul class=\"pull-right\">\n                        <li>Se feliz</li>\n                        <li><a id=\"gototop\" class=\"gototop\" href=\"#\"><i class=\"fa fa-arrow-up\"></i></a></li><!--#gototop-->\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </footer><!--/#footer-->\n\n        \n    <script src=\"js/jquery.js\"></script>\n    <script src=\"js/bootstrap.min.js\"></script>\n    <script src=\"js/jquery.prettyPhoto.js\"></script>\n    <script src=\"js/jquery.isotope.min.js\"></script>\n    <script src=\"js/main.js\"></script>\n    <script src=\"js/wow.min.js\"></script>\n    </body>\n</html>\n");
+            out.println("<footer id=\"footer\" class=\"midnight-blue\">" + 
+ "        <div class=\"container\">" + 
+ "            <div class=\"row\">" + 
+ "                <div class=\"col-sm-6\">" + 
+ "                    &copy; 2016 <a target=\"_blank\" title=\"Desarrollo web\">By Gerardo Arceo</a>. <i class=\"fa fa-code\"></i>" + 
+ "                </div>" + 
+ "                <div class=\"col-sm-6\">" + 
+ "                    <ul class=\"pull-right\">" + 
+ "                        <li>Se feliz</li>" + 
+ "                        <li><a id=\"gototop\" class=\"gototop\" href=\"#\"><i class=\"fa fa-arrow-up\"></i></a></li><!--#gototop-->" + 
+ "                    </ul>" + 
+ "                </div>" + 
+ "            </div>" + 
+ "        </div>" + 
+ "    </footer><!--/#footer-->" + 
+ "" + 
+ "        " + 
+ "    <script src=\"js/jquery.js\"></script>" + 
+ "    <script src=\"js/bootstrap.min.js\"></script>" + 
+ "    <script src=\"js/jquery.prettyPhoto.js\"></script>" + 
+ "    <script src=\"js/jquery.isotope.min.js\"></script>" + 
+ "    <script src=\"js/main.js\"></script>" + 
+ "    <script src=\"js/wow.min.js\"></script>" + 
+ "    </body>" + 
+ "</html>" + 
+ "");
         }
         catch (Exception e) {
             response.sendRedirect("Error.jsp");
